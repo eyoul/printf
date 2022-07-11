@@ -1,58 +1,88 @@
-.TH man 3 "11 July 2022" "0.01" "_printf man page"
+.\" _printf man page /usr/share/man/man3/printf.3
+.\"
+.TH _PRINTF 3 "11-07-2022" "0.1" "_printf"
 
 .SH NAME
+_printf
 
-.B _printf
-
-- A simple re-creation of the printf function
+.B_printf - format and print data. Part of a project at Holberton School.
 
 .SH SYNOPSIS
+Part of a project at alx-holberton school.
+This project mimics the printf found in in C.
 
-To use this function the #include "main.h" header is needed.
+_printf FORMAT [ARGUMENT]...
+.ss
 
 .SH DESCRIPTION
 
-The _printf() function produces output according to a format which is described
+_printf() the function produces output according to format string that \
+specifies how subsequent arguments are written and converted to stdout, the \
+standard output stream.
 
-below. This function write its output to the stdout, the standard output stream.
+_printf() will loop through the format for a conversion specifier (%). If found\
+, it will access an array of structures and match the corresponding character \
+with the given function. The specified function will return a string-converted \
+version of the result and immediately passed into the buffer.
 
-.SH USAGE
+.SH CONVERSION SPECIFIERS
 
-To use _printf you have to use the following key characters preceeded by % symbol.
+.IP %s
+prints a string.
+.IP %c
+prints a character.
+.IP %d
+prints an integer. Same as %i.
+.IP %i
+See %d.
+.IP %u
+Prints unsigned int.
+.IP %o
+Converts unsigned int to octal.
+.IP %x
+Converts unsigned int to hexadecimal (lowercase)
+.IP %X
+Converts unsigned int to hexadecimal (uppercase)
+.IP %r
+Prints reverse of intput string
+.IP %R
+Converts string to rot13
 
-.RS 3
+.SH OPTIONS
 
-%c: To be used to print characters
+Pending
 
-.RS 0
+.SH FORMAT
+controls the output as in C printf.  Interpreted sequences are:
 
-%s: To be used to print strings
+       \n     new line
 
-.RS 0
+       \t     tab
 
-%d: To print integers of max and min size of an int type
+       %%     a single %
 
-.RS 0
+.SS Example
+.RS
+_printf("Hello %s", "world");
+Prints string "Hello world"
 
-%i: To print integers of max and min size of an int type
+_printf("They call me mad, but one day when history of France is written, they \
+will mark my name well ...%s ", "Sidney Applebaum")
 
-.RS 0
+.RE
 
-%b: To print a number in binary form
+.SS Return Value
+Upon success, these main function will return the number of characters printed.
 
-.SH RETURN VALUES
+.SH "SEE ALSO"
+.SH ""
 
-The _printf() function returns an integer representing the number of symbols
+.BR printf(1)
 
-printed not counting \\0 for the string.
-
-.SH SEE ALSO
-
-.I printf(3)
+.P
 
 .SH BUGS
+Memory issues are known to frequent this function. User beware.
 
-No known bugs.
-
-.SH AUTHOR
-Eyoul Shimeles and Yiacob Tilahun
+.SH "AUTHOR"
+Eyoul Shimeles and Yiacob Kibret
