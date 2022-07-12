@@ -12,6 +12,19 @@ typedef struct print
 	char *t;
 	int (*f)(va_list);
 } print_t;
+/**
+ * struct flags - structure turnon flags
+ * @plus: plus sign
+ * @space: space key
+ * @hash: hash sign
+ */
+
+typedef struct flags
+{
+	int plus;
+	int space;
+	int hash;
+} flags_t;
 int get_flag(char s, flags_t *f);
 int _putchar(char c);
 int _printf(const char *format, ...);
